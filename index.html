@@ -572,7 +572,7 @@
             updateBusMarker();
             
             // Add college marker
-            L.marker([16.69529,81.05169]).addTo(map)
+            L.marker([16.696499056086402,81.05052784442461]).addTo(map)
                 .bindPopup("<b>College Campus</b><br>Destination point for all buses")
                 .openPopup();
             
@@ -670,8 +670,8 @@
             if (!userBus) return;
 
             // Calculate distance to college (simplified)
-            const collegeLat = 16.69529;
-            const collegeLng = 81.05169;
+            const collegeLat = 16.696499056086402;
+            const collegeLng = 81.05052784442461;
             const busLat = userBus.currentLocation.lat;
             const busLng = userBus.currentLocation.lng;
                         
