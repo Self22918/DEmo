@@ -14,7 +14,7 @@ function initMap() {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    L.marker([16.69529, 81.05169])
+    L.marker([16.696499056086402, 81.05052784442461])
         .addTo(map)
         .bindPopup("<b>College Campus</b><br>Destination point for all buses");
 }
