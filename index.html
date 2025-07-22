@@ -12,16 +12,26 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-compat.js"></script>
     <script>
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.onkeydown = function(e) {
+  // Block right-click context menu
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Block common developer shortcuts
+  document.addEventListener('keydown', function (e) {
+    // Normalize key (in case of lowercase)
+    const key = e.key.toLowerCase();
+
     if (
-      e.keyCode == 123 || // F12
-      (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) || // Ctrl+Shift+I/J/C
-      (e.ctrlKey && e.key === 'U') // Ctrl+U (view source)
+      e.keyCode === 123 || // F12
+      (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) || // Ctrl+Shift+I/J/C
+      (e.ctrlKey && key === 'u') // Ctrl+U
     ) {
+      e.preventDefault();
+      alert("This action is disabled.");
       return false;
     }
-  };
+  });
 </script>
     <script>
      const firebaseConfig = {
